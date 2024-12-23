@@ -32,11 +32,8 @@ def run_staad():
     input_json = Path.cwd() / "inputs.json"
     with open(input_json) as jsonfile:
         data = json.load(jsonfile)
-        print(f"{data=}")
-    
+
     nodes, lines,section_name = data[:]
-    print(f"{nodes=}")
-    print(f"{lines=}")
 
     # Wait to load interface
     time.sleep(10)
@@ -147,7 +144,6 @@ def run_staad():
 
     staad_process.terminate()
     return ret
-
 
 if __name__ == "__main__":
     openstaad = run_staad()
